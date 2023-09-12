@@ -15,10 +15,20 @@
             {{ form.position |as_crispy_field }}            
         </div>      
     </div>
-    <button type="submit" class="btn btn-success my-2">
-        <i class="fa-solid fa-database fa-lg"></i>
-        Submit
-    </button>
+    <div class="row my-3">
+        <div class="col-md-4">
+            <button type="submit" class="btn btn-success btn-block  btn-lg">
+                <i class="fa-solid fa-database fa-lg"></i>
+                Submit
+            </button>
+        </div>
+            <div class="col-md-6">
+                <a href="{% url 'list' %}" class="btn btn-secondary btn-block btn-lg">
+                    <i class="fas fa-stream"></i>
+                    Back to List
+                </a>
+            </div>       
+    </div>   
 </form>
 
 {% endblock content %}
