@@ -1,9 +1,24 @@
 {% extends 'employees/base.html' %}
+{% load crispy_forms_tags %}
 
 {% block content %}
 <form action="" method="post" autocomplete="off">
-    {% csrf_token %}
-    {{ form }}
+    {% csrf_token %}  
+    <!-- {{ form|crispy }} -->
+    {{ form.full_name |as_crispy_field }}
+    {{ form.mobile |as_crispy_field }}
+    <div class="row">
+        <div class="col-md-4">
+            {{ form.emp_code |as_crispy_field }}
+        </div>
+        <div class="col-md-8">
+            {{ form.position |as_crispy_field }}            
+        </div>      
+    </div>
+    <button type="submit" class="btn btn-success my-2">
+        <i class="fa-solid fa-database fa-lg"></i>
+        Submit
+    </button>
 </form>
 
 {% endblock content %}
