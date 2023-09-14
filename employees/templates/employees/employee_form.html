@@ -2,7 +2,7 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
-<form action="" method="post" autocomplete="off">
+<form action="" method="post" autocomplete="autoff">
     {% csrf_token %}  
     <!-- {{ form|crispy }} -->
     {{ form.full_name |as_crispy_field }}
